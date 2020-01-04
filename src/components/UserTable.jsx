@@ -1,5 +1,4 @@
 import React from "react";
-import Register from "./Register";
 
 export default class UserTable extends React.Component {
   constructor(props) {
@@ -11,11 +10,6 @@ export default class UserTable extends React.Component {
     this.onDelete = this.onDelete.bind(this);
     this.onEdit = this.onEdit.bind(this);
   }
-
-  // componentWillMount() {
-  //   console.log(this.props.allData);
-  //   this.setState({ data: this.props.allData });
-  // }
 
   onDelete = (id, e) => {
     this.props.onDelete(id);

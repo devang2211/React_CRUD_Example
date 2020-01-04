@@ -7,11 +7,9 @@ class EditForm extends Component {
     this.onChangePersonName = this.onChangePersonName.bind(this);
     this.onChangePersonEmail = this.onChangePersonEmail.bind(this);
     this.onChangePersonGender = this.onChangePersonGender.bind(this);
-    console.log(this.props.allData);
     var getAllProps = this.props.allData;
     var getId = this.props.ItemId;
     const PersonInfo = getAllProps.find(item => item.id === getId);
-    console.log(PersonInfo);
     this.state = {
       id: PersonInfo.id,
       name: PersonInfo.name,
@@ -45,7 +43,6 @@ class EditForm extends Component {
       email: this.state.email,
       gender: this.state.gender
     };
-    console.log(data);
     this.props.onUpdate(data);
 
     this.setState({

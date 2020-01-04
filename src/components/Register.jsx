@@ -7,12 +7,10 @@ class Register extends Component {
     this.onChangePersonName = this.onChangePersonName.bind(this);
     this.onChangePersonEmail = this.onChangePersonEmail.bind(this);
     this.onChangePersonGender = this.onChangePersonGender.bind(this);
-    console.log(this.props.allData);
     var getAllProps = this.props.allData;
     var setId;
-    if (getAllProps != "" && getAllProps != undefined) {
+    if (getAllProps !== "" && getAllProps !== undefined) {
       var getLastElement = getAllProps[getAllProps.length - 1];
-      console.log(getLastElement);
       setId = getLastElement.id + 1;
     }
     this.state = {
@@ -48,7 +46,6 @@ class Register extends Component {
       email: this.state.email,
       gender: this.state.gender
     };
-    console.log(data);
     this.props.onAdd(data);
 
     this.setState({

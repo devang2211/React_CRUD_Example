@@ -1,6 +1,4 @@
-//import React from "react";
 import React, { Component } from "react";
-//import "./App.css";
 import Register from "./Register";
 import EditForm from "./EditForm";
 import UserTable from "./UserTable";
@@ -50,14 +48,11 @@ class parent extends Component {
   onAdd(data) {
     const allInfo = this.getInfo();
     allInfo.push(data);
-    console.log(allInfo);
     this.setState({ allInfo });
   }
 
   onUpdate(data) {
     let allInfo = this.getInfo();
-    console.log(data);
-    console.log(allInfo);
     allInfo = allInfo.map(allInfo => {
       if (allInfo.id === data.id) {
         allInfo.name = data.name;
@@ -71,12 +66,9 @@ class parent extends Component {
 
   onDelete = Id => {
     let allInfo = this.getInfo();
-    console.log(Id);
-    console.log(allInfo);
     let filteredPerson = allInfo.filter(allInfo => {
       return allInfo.id != Id;
     });
-    console.log(filteredPerson);
     this.setState({ allInfo: filteredPerson, ItemId: "" });
   };
 
@@ -84,7 +76,7 @@ class parent extends Component {
     return (
       <div className="App">
         <h1>Personal Information</h1>
-        {this.state.IsEdit == true ? (
+        {this.state.IsEdit === true ? (
           <EditForm
             onUpdate={this.onUpdate}
             allData={this.state.allInfo}
